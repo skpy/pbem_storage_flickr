@@ -44,18 +44,5 @@ class pbem_storage_flickr extends Plugin
 		}
 		return $images . $body;
 	}
-
-	public function action_plugin_ui( $plugin_id, $action )
-	{
-		if ( $plugin_id == $this->plugin_id() ) {
-			switch ( $action ) {
-				case _t('Execute Now','pbem') :
-					self::pbem_publish_pending();
-					Utils::redirect( URL::get( 'admin', 'page=plugins' ) );
-					break;
-			}
-		}
-	}
-
 }
 ?>
