@@ -2,11 +2,12 @@
 <pluggable type="plugin">
 	<name>PBEM Storage: Flickr</name>
 	<version>1.0.0</version>
-	<url>http://habariproject.org/</url>
-	<author url="http://habariproject.org/">The Habari Community</author>
+	<url>https://github.com/skpy/pbem_storage_flickr</url>
+	<author url="http://skippy.net/">Scott Merrill</author>
 	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
 	<description><![CDATA[use Flickr to store all attachments sent via PBeM]]></description>
 	<copyright>2013</copyright>
+	<guid>5b354b4c-326e-47ac-8fb1-5983e0e90989</guid>
 	<requires>
 		<feature>flickr</feature>
 		<feature>pbem</feature>
