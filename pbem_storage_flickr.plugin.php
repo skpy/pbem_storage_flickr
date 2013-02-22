@@ -34,15 +34,20 @@ class pbem_storage_flickr extends Plugin
 		}
 		foreach( $media as $filename => $filepath ) {
 			$id = $f->upload( $filepath, $filename, '', str_replace( ',', '', $tags), '', 0 );
+			if ( ! $id || ! is_numeric( $id ) ) {
+				EventLog::log( "Failed to upload to Flickr", 'warning', 'plugin', 'pbem' );
+				continue;
+			}
 			EventLog::log("Uploaded photo $id to Flickr", 'info', 'plugin', 'pbem');
 			unlink( $filepath );
+			if ( '' != $images ) { $images .= ' '; }
 			$images .= '[flickr id=' . $id;
 			if ( $size ) {
 				$images .= " size=$size";
 			}
 			$images .= '/]';
 		}
-		return $images . $body;
+		return $images . "\n" . $body;
 	}
 }
 ?>
