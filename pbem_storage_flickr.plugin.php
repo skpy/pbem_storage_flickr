@@ -45,7 +45,10 @@ class pbem_storage_flickr extends Plugin
 			if ( $size ) {
 				$images .= " size=$size";
 			}
-			$images .= '/]';
+			if ( $user->info->pbem_class ) {
+				$images .= ' class=' . $user->info->pbem_class;
+			}
+			$images .= ' /]';
 		}
 		return $images . "\n" . $body;
 	}
